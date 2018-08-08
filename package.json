@@ -15,6 +15,11 @@
     "markup"
   ],
   "author": "Arisson Santos",
+  "homepage": "https://halojs.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arisantos/halojs.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "jest": "^23.4.2"
