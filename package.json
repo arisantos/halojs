@@ -1,0 +1,25 @@
+{
+  "name": "halojs",
+  "version": "0.0.1",
+  "description": "HaloJS is a simple but powerful templating language that allows you to generate HTML markup in a Javascript manner.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "template",
+    "engine",
+    "templating",
+    "javascript",
+    "html",
+    "markup"
+  ],
+  "author": "Arisson Santos",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.4.2"
+  },
+  "dependencies": {
+    "memory-cache": "^0.2.0"
+  }
+}
