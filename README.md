@@ -3,7 +3,7 @@ HaloJS is a simple but powerful templating language that allows you to generate 
 
 ## Installation
 ```bash
-$ npm install --save draigjs
+$ npm install --save halojs
 ```
 ## Features
  * Create HTML markup with Javascript syntax
