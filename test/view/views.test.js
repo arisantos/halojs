@@ -214,5 +214,25 @@ describe('parses Halo form functions into HTML', () => {
 
   });
 
+  describe('extends HaloJS', () => {
+
+    it('adds extra methods to HaloJS', async () => {
+        const halojs = require('../../index');
+        halojs.config({ 
+            caching: 'memory', 
+            viewFolder: path.normalize(__dirname + '/resources/views'),
+            extend: {
+                calculate: (n1, n2) => {
+                    return n1 + n2;
+                }
+            }
+        });
+
+        return await halojs.renderFile('extend').then(res => { 
+            expect(res).toMatch('20');
+        });
+    });
+
+  });
 
 });

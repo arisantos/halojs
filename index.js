@@ -15,7 +15,8 @@
     caching: false,
     viewFolder: null,
     csrfField: null,
-    csrfToken: null
+    csrfToken: null,
+    extend: {}
   };
 
   var MemoryCache = null;
@@ -161,6 +162,15 @@
           return m.replace(m, ' ` : `');
         }
 
+        if (typeof config !== 'undefined') {
+            for (let key in config.extend) {
+                var regex = new RegExp('@\\s*' + key + '\\s*\\(');
+                if (m.match(regex)) {
+                    return m.replace(regex, '${ extend["' + key + '"](').replace(/\)\s*;/, ') }');
+                }
+            }
+        }
+
 
         return m.replace(/[\\`]/g, '\\$&');
       });
@@ -258,6 +268,8 @@
       keys: [],
       values: []
     };
+    Args.keys.push('extend'); 
+    Args.values.push(config.extend);
   }
 
   function getFullFilePath(filePath) {
